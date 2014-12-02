@@ -32,7 +32,7 @@ def generate(N, with_sectors=False, q=None):
 	if with_sectors:
 		for x, y, u, v, n in product(numbs, numbs, numbs, numbs, numbs):
 			#print x//q == True, x, q
-			if x!=u and y!=v and ((x-1)//q == (u-1)//q) and (((y-1)//q) == ((v-1)//q)):
+			if (x>u or y>v) and ((x-1)//q == (u-1)//q) and (((y-1)//q) == ((v-1)//q)):
 				print x, y, "|", u, v, n
 
 				k += 1
